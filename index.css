@@ -1,0 +1,104 @@
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--very-light-gray);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+h1, h3 {
+    color: var(--very-dark-blue);
+}
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.first-line {
+    font-weight: 200;
+}
+.introduction h1 {
+    font-size: 32px;
+    margin: 0;
+}
+.introduction p {
+    max-width: 500px;
+    font-weight: 200;
+    font-size: 14px;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(6,1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    max-height: 800px;
+}
+.first-card{
+    grid-area: 3/1/5/2;
+    border-top: 5px solid;
+}
+.second-card { grid-area: 2 / 2 / 4 / 3; border-top: 5px solid var(--red) }
+.third-card { grid-area: 4 / 2 / 6 / 3; border-top: 5px solid var(--orange) }
+.fourth-card { grid-area: 3 / 3 / 5 / 4; border-top: 5px solid var(--blue) }
+ @media screen and (max-width: 1200px) {
+    .introduction h1 {
+        font-size: 26px;
+    }
+
+    .introduction p {
+        max-width: 325px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        max-height: max-content;
+        margin: 50px 0;
+    }
+
+    .first-card, .second-card, .third-card, .fourth-card {
+        grid-area: auto;
+    }
+} 
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+}
+
+.card img {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: 60px;
+    align-self: end;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card span {
+    margin-top: 10px;
+    font-weight: 200;
+}
